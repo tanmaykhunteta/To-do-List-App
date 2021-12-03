@@ -6,7 +6,7 @@ $(document).ready(function(){
 
       $.ajax({
         type: 'POST',
-        url: '/',
+        url: '',
         data: todo,
         success: function(data){
           //do something with the data via front-end framework

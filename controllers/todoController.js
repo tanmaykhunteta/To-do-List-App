@@ -17,7 +17,7 @@ var urlencodedParser = bodyParser.urlencoded({extended: false});
 
 module.exports = function(app){
 
-    app.get('/', function(req,res){
+    app.get('', function(req,res){
         Todo.find({}, function(err, data){
             if(err) throw err;
             res.render('todo', {todos: data});
@@ -25,7 +25,7 @@ module.exports = function(app){
         
     });
 
-    app.post('/', urlencodedParser,function(req,res){
+    app.post('', urlencodedParser,function(req,res){
         var newTodo = Todo(req.body).save(function(err,data){
             if(err) throw err;
             res.json(data);
